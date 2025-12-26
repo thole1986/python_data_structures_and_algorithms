@@ -87,6 +87,5 @@ class WebCrawler:
 if __name__ == "__main__":
     # Tạo crawler với giới hạn 30 trang
     crawler = WebCrawler(max_pages=30)
-
     # Bắt đầu crawl
     crawler.crawl("https://www.cnn.com")
