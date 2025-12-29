@@ -3,7 +3,7 @@ def tail(n):
 
     print('Calling tail with n=' + str(n))
 
-    # BASE CASE
+    # BASE CASE -> To stop the function.
     if n == 0:
         return
 
@@ -30,4 +30,5 @@ def head(n):
     print(n)
 
 
+# tail(5)
 head(5)
