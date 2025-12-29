@@ -18,6 +18,7 @@ def tim_gio_cao_diem(don_hang, k):
         print(f"Thêm giờ {i}h: {gio_moi} đơn")
         print(f"Bỏ giờ {i-k}h: {gio_cu} đơn")
 
+        # Công thức tính
         current_sum = current_sum + gio_moi - gio_cu
         print(
             f"Cửa sổ hiện tại ({i-k+1}h → {i+1}h) - Đơn hàng:",
