@@ -1,13 +1,21 @@
-dp_table_blue = ["b", "l", "u", "e"]
-dp_table_clues = ["c", "l", "u", "e", "s"]
-dp_table = [[0 for i in range(len(dp_table_blue))] for i in range(len(dp_table_clues))] # (5,4)
-print(dp_table)
+blue = ["b", "l", "u", "e"]
+clues = ["c", "l", "u", "e", "s"]
 
-for i in range(0, len(dp_table_blue)):
-    for j in range(0, len(dp_table_clues)):
-        if dp_table_clues[j] == dp_table_blue[i]:
-            dp_table[i][j] = dp_table[i-1][i-1] + 1
+# tạo bảng (len(clues)+1) x (len(blue)+1)
+dp = [[0 for _ in range(len(blue) + 1)]
+      for _ in range(len(clues) + 1)]
+
+max_len = 0
+
+for i in range(1, len(clues) + 1):
+    for j in range(1, len(blue) + 1):
+        if clues[i-1] == blue[j-1]:
+            dp[i][j] = dp[i-1][j-1] + 1
+            max_len = max(max_len, dp[i][j])
         else:
-            dp_table[i][j] = 0
+            dp[i][j] = 0
 
-print(dp_table)
+for row in dp:
+    print(row)
+
+print("Longest Common Substring length:", max_len)
